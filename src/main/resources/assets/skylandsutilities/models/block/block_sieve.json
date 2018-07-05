@@ -1,0 +1,7 @@
+{
+    "parent": "exnihilocreatio:block/block_sieve",
+    "textures": {
+    "particle": "aether:blocks/skyroot_planks/skyroot_planks",
+    "texture": "aether:blocks/skyroot_planks/skyroot_planks"
+    }
+}

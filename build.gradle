@@ -1,0 +1,72 @@
+buildscript {
+    ext.kotlin_version = '1.2.51'
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'kotlin'
+
+version = "1.0.1"
+group = "ftblag.skylandsutilities"
+archivesBaseName = "SkylandsUtilities"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "1.12.2-14.23.4.2705"
+    runDir = "run"
+    mappings = "snapshot_20171003"
+}
+
+repositories {
+    maven {
+        url "https://minecraft.curseforge.com/api/maven/"
+    }
+	maven {
+		url = "http://dvs1.progwml6.com/files/maven"
+	}
+	maven {
+		url = "modmaven.k-4u.nl"
+	}
+    mavenCentral()
+}
+
+dependencies {
+    compile "ex-nihilo-creatio:exnihilocreatio:1.12:0.2.4"
+    compile "the-aether-ii:aether_ii:1.12.2:1.0.8"
+    compile "orbis-api:orbis_api:1.12.2:1.1.5"
+	deobfProvided "mezz.jei:jei_1.12.2:4.8.3.124:api"
+	runtime "mezz.jei:jei_1.12.2:4.8.3.124"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
