@@ -3,12 +3,14 @@ package ftblag.skylandsutilities
 import com.gildedgames.aether.common.blocks.BlocksAether
 import com.gildedgames.aether.common.items.ItemsAether
 import com.gildedgames.orbis_api.core.GameRegistrar
+import exnihilocreatio.blocks.BlockBarrel
 import exnihilocreatio.blocks.BlockSieve
 import exnihilocreatio.items.tools.CrookBase
 import exnihilocreatio.items.tools.HammerBase
 import exnihilocreatio.util.Data
 import exnihilocreatio.util.IHasModel
 import net.minecraft.block.Block
+import net.minecraft.block.material.Material
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -44,6 +46,7 @@ object SkylandsUtilities {
     val skyrootHammer = HammerBase("skyroot_hammer", 64, Item.ToolMaterial.WOOD).setCreativeTab(tab)
     val holystoneHammer = HammerBase("holystone_hammer", 128, Item.ToolMaterial.STONE).setCreativeTab(tab)
     val holystoneStick = HolyStick()
+    val skyrootBarrel = BlockBarrel(0, Material.WOOD).setUnlocalizedName("skyroot_barrel")
 
     class HolyStick : Item, IHasModel{
         constructor() {
@@ -77,5 +80,8 @@ object SkylandsUtilities {
 
         GameRegistry.addShapedRecipe(ResourceLocation(MODID, "holy_stick"), null, ItemStack(holystoneStick),
                 "X", "X", 'X', BlocksAether.holystone)
+
+        GameRegistry.addShapedRecipe(ResourceLocation(MODID, "skyroot_barrel"), null, ItemStack(skyrootBarrel),
+                "P P", "P P", "PSP", 'P', BlocksAether.skyroot_planks, 'S', BlocksAether.skyroot_slab)
     }
 }

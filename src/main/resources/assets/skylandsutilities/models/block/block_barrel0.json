@@ -1,0 +1,7 @@
+{
+  "parent": "exnihilocreatio:block/block_barrel0",
+  "textures": {
+    "particle": "aether:blocks/skyroot_planks/skyroot_planks",
+    "texture": "aether:blocks/skyroot_planks/skyroot_planks"
+  }
+}
