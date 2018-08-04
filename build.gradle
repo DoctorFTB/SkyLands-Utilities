@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'kotlin'
 
-version = "1.0.1"
+version = "1.0.3"
 group = "ftblag.skylandsutilities"
 archivesBaseName = "SkylandsUtilities"
 
@@ -24,6 +24,8 @@ compileJava {
 minecraft {
     version = "1.12.2-14.23.4.2705"
     runDir = "run"
+    replace '@VERSION@', project.version
+    replaceIn "SkylandsUtilities.kt"
     mappings = "snapshot_20171003"
 }
 
@@ -41,9 +43,10 @@ repositories {
 }
 
 dependencies {
-    compile "ex-nihilo-creatio:exnihilocreatio:1.12:0.2.4"
-    compile "the-aether-ii:aether_ii:1.12.2:1.0.8"
-    compile "orbis-api:orbis_api:1.12.2:1.1.5"
+    deobfCompile "ex-nihilo-creatio:exnihilocreatio:1.12:0.2.4"
+	deobfCompile "ex-compressum:ExCompressum_1.12.2:3.0.11"
+    deobfCompile "the-aether-ii:aether_ii:1.12.2:1.0.8"
+    deobfCompile "orbis-api:orbis_api:1.12.2:1.1.5"
 	deobfProvided "mezz.jei:jei_1.12.2:4.8.3.124:api"
 	runtime "mezz.jei:jei_1.12.2:4.8.3.124"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
