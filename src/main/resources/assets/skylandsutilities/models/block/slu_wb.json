@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "skylandsutilities:blocks/holystone_crafting_table_side",
+    "down": "skylandsutilities:blocks/holystone_crafting_table_botton",
+    "up": "skylandsutilities:blocks/holystone_crafting_table_top",
+    "north": "skylandsutilities:blocks/holystone_crafting_table_side",
+    "south": "skylandsutilities:blocks/holystone_crafting_table_side",
+    "east": "skylandsutilities:blocks/holystone_crafting_table_side",
+    "west": "skylandsutilities:blocks/holystone_crafting_table_side"
+  }
+}

@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "skylandsutilities",
+  "name": "Skylands Utilities",
+  "description": "Skylands Utilities is a mod that adds compatibility between Ex Nihilo and Aether 2.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["FTB_lag"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
