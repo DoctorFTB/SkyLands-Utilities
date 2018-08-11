@@ -1,6 +1,7 @@
 package ftblag.skylandsutilities.workbench
 
 import exnihilocreatio.util.Data
+import exnihilocreatio.util.IHasModel
 import ftblag.skylandsutilities.SkylandsUtilities
 import net.minecraft.block.Block
 import net.minecraft.block.ITileEntityProvider
@@ -17,7 +18,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 import net.minecraftforge.fml.common.registry.GameRegistry
 
-class BlockWB : Block, ITileEntityProvider {
+class BlockWB : Block, ITileEntityProvider, IHasModel {
     constructor() : super(Material.WOOD) {
         setUnlocalizedName("slu_wb")
         setRegistryName("slu_wb")
